@@ -1,0 +1,53 @@
+---
+interface Props {
+    repo: string;
+    id: string;
+}
+const { repo, id } = Astro.props;
+
+import { Icon } from 'astro-icon'
+---
+
+<script define:vars={{ repo, id }}>
+    (async () => {
+        const res = await fetch(`https://api.github.com/repos/${repo}`);
+        const data = await res.json();
+
+        const stars = data.stargazers_count;
+        const stars_element = document.getElementById(`projectStars_${id}`);
+        if (stars_element) {
+            stars_element.innerHTML = stars_element.innerHTML.replace('Loading', stars);
+        }
+
+        const title = data.name;
+        const title_element = document.getElementById(`projectTitle_${id}`);
+        if (title_element) {
+            title_element.innerHTML = title_element.innerHTML.replace('Loading', title);
+        }
+
+        const desc = data.description;
+        const desc_element = document.getElementById(`projectDesc_${id}`);
+        if (desc_element) {
+            desc_element.innerHTML = desc_element.innerHTML.replace('Loading', desc);
+        }
+    })();
+</script>
+
+<a
+    href={`https://github.com/${repo}`}
+    rel="noopener noreferrer"
+    target="_blank"
+    class="flex-grow h-24 focus:outline-none transition duration-300 ease-in-out transform hover:scale-105 p-3 rounded-md border border-gray-800 dark:border-gray-400 shadow flex items-center justify-between"
+>
+    <div class="my-auto">
+        <div id={`projectTitle_${id}`} class="font-semibold text-lg">
+            Loading
+        </div>
+        <p id={`projectDesc_${id}`} class="text-xs">
+            Loading
+        </p>
+    </div>
+    <div id={`projectStars_${id}`} class="font-semibold text-base">
+        <Icon pack="mdi" name="star" class="fill-gray-800 dark:fill-white h-[1em] inline" /> Loading
+    </div>
+</a>

@@ -1,0 +1,14 @@
+---
+interface Props {
+    name: string;
+    icon: string;
+}
+const { name, icon } = Astro.props;
+
+import { Icon } from 'astro-icon'
+---
+<div class="flex-grow h-16 focus:outline-none transition duration-300 ease-in-out transform hover:scale-105 p-3 rounded-md border border-gray-800 dark:border-gray-400 shadow flex items-center justify-between">
+    <div class="my-auto">
+        <Icon name={icon} class="fill-gray-800 dark:fill-white h-[1.8em] w-[1.8em] inline" /> <span class="font-medium ml-1">{name}</span>
+    </div>
+</div>

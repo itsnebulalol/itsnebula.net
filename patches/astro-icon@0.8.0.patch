@@ -1,0 +1,65 @@
+diff --git a/lib/utils.ts b/lib/utils.ts
+index daa2485de57847c11196c059fbd4d1942f2bc366..480670fce2c0aea56aea7224b28d806694735b2e 100644
+--- a/lib/utils.ts
++++ b/lib/utils.ts
+@@ -2,7 +2,6 @@
+ import { SPRITESHEET_NAMESPACE } from "./constants";
+ import { Props, Optimize } from "./Props";
+ import getFromService from "./resolver";
+-import { optimize as optimizeSVGNative } from "svgo";
+ 
+ // Adapted from https://github.com/developit/htmlParser
+ const splitAttrsTokenizer = /([a-z0-9_\:\-]*)\s*?=\s*?(['"]?)(.*?)\2\s+/gim;
+@@ -27,51 +26,7 @@ function optimizeSvg(
+   name: string,
+   options: Optimize
+ ): string {
+-  return optimizeSVGNative(contents, {
+-    plugins: [
+-      "removeDoctype",
+-      "removeXMLProcInst",
+-      "removeComments",
+-      "removeMetadata",
+-      "removeXMLNS",
+-      "removeEditorsNSData",
+-      "cleanupAttrs",
+-      "minifyStyles",
+-      "convertStyleToAttrs",
+-      {
+-        name: "cleanupIDs",
+-        params: { prefix: `${SPRITESHEET_NAMESPACE}:${name}` },
+-      },
+-      "removeRasterImages",
+-      "removeUselessDefs",
+-      "cleanupNumericValues",
+-      "cleanupListOfValues",
+-      "convertColors",
+-      "removeUnknownsAndDefaults",
+-      "removeNonInheritableGroupAttrs",
+-      "removeUselessStrokeAndFill",
+-      "removeViewBox",
+-      "cleanupEnableBackground",
+-      "removeHiddenElems",
+-      "removeEmptyText",
+-      "convertShapeToPath",
+-      "moveElemsAttrsToGroup",
+-      "moveGroupAttrsToElems",
+-      "collapseGroups",
+-      "convertPathData",
+-      "convertTransform",
+-      "removeEmptyAttrs",
+-      "removeEmptyContainers",
+-      "mergePaths",
+-      "removeUnusedNS",
+-      "sortAttrs",
+-      "removeTitle",
+-      "removeDesc",
+-      "removeDimensions",
+-      "removeStyleElement",
+-      "removeScriptElement",
+-    ],
+-  }).data;
++  return contents;
+ }
+ 
+ const preprocessCache = new Map();

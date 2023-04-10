@@ -1,0 +1,58 @@
+---
+import Layout from '@layouts/Default.astro';
+
+import { ActivityCard } from '@components/ActivityCard';
+import Time from '@components/Time';
+import ProjectCard from '@components/ProjectCard.astro';
+import SkillCard from '@components/SkillCard.astro';
+
+import { Icon } from 'astro-icon'
+---
+
+<script>
+	// Weather
+	const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=New%20York&units=imperial&appid=eecd2e62383a31c75535e0c23d2eb967&lang=en`);
+	const data = await res.json();
+
+	const temp = data.main.temp;
+	const weather_element = document.getElementById(`weather`);
+	if (weather_element) {
+		weather_element.innerHTML = weather_element.innerHTML.replace('Loading weather', `${Math.round(temp)}°F`);
+	}
+</script>
+
+<Layout>
+	<!-- Hero -->
+	<div class="h-16"></div>
+	<h1 class="mb-1">I'm <span class="bg-gradient-to-r from-blue-300 to-[#ffacb4] animate-[gradient_3s_ease-in-out_infinite] clip">Nebula</span>, a developer from the US.</h1>
+	<h3 class="font-normal mb-2"><span id="weather" class="font-medium">Loading weather</span> in New York</h3>
+	<h4 class="font-normal mb-4"><Icon name="mdi:clock" class="fill-neutral-900 dark:fill-white h-5 inline" /> <Time client:only="react" /></h4>
+	<ActivityCard client:only="react" />
+
+	<!-- Projects -->
+	<h3 class="font-medium mt-12">Projects</h3>
+	<p class="mb-4">These are projects that I have either created, or contributed in. I only feature my projects that I like here.</p>
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+		<ProjectCard repo="palera1n/palera1n" id="fEM2hz" />
+		<ProjectCard repo="permasigner/permasigner" id="8JjeWC" />
+		<ProjectCard repo="itsnebulalol/itsnebula.net" id="GM98xT" />
+	</div>
+
+	<!-- Skills -->
+	<h3 class="font-medium mt-12">Skills</h3>
+	<p class="mb-4">These are tools or languages that I'm either fluent in, or have a decent amount of experience with.</p>
+	<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+		<SkillCard name="VS Code" icon="vscode-icons:file-type-vscode2" />
+		<SkillCard name="Figma" icon="logos:figma" />
+		<SkillCard name="Javascript" icon="logos:javascript" />
+		<SkillCard name="Typescript" icon="logos:typescript-icon" />
+		<SkillCard name="Python" icon="logos:python" />
+		<SkillCard name="Swift" icon="logos:swift" />
+		<SkillCard name="HTML" icon="logos:html-5" />
+		<SkillCard name="Tailwind" icon="logos:tailwindcss-icon" />
+		<SkillCard name="Fastify" icon="simple-icons:fastify" />
+		<SkillCard name="Svelte" icon="logos:svelte-icon" />
+		<SkillCard name="Docker" icon="logos:docker-icon" />
+		<SkillCard name="Astro" icon="vscode-icons:file-type-astro" />
+	</div>
+</Layout>
