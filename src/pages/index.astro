@@ -13,11 +13,23 @@ import { Icon } from 'astro-icon'
 	// Weather
 	const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=New%20York&units=imperial&appid=eecd2e62383a31c75535e0c23d2eb967&lang=en`);
 	const data = await res.json();
+	const temp_f = data.main.temp;
 
-	const temp = data.main.temp;
+	const res2 = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=New%20York&units=metric&appid=eecd2e62383a31c75535e0c23d2eb967&lang=en`);
+	const data2 = await res2.json();
+	const temp_c = data2.main.temp;
+
 	const weather_element = document.getElementById(`weather`);
 	if (weather_element) {
-		weather_element.innerHTML = weather_element.innerHTML.replace('Loading weather', `${Math.round(temp)}°F`);
+		weather_element.innerHTML = weather_element.innerHTML = `${Math.round(temp_f)}°F`;
+
+		weather_element.addEventListener('mouseover', () => {
+			weather_element.innerHTML = `${Math.round(temp_c)}°C`;
+		});
+
+		weather_element.addEventListener('mouseout', () => {
+			weather_element.innerHTML = `${Math.round(temp_f)}°F`;
+		});
 	}
 </script>
 
