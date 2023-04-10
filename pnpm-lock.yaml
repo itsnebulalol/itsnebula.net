@@ -6,9 +6,6 @@ patchedDependencies:
     path: patches/astro-icon@0.8.0.patch
 
 dependencies:
-  '@astrojs/cloudflare':
-    specifier: ^6.2.2
-    version: 6.2.2(astro@2.2.1)
   '@astrojs/react':
     specifier: ^2.1.1
     version: 2.1.1(@types/react-dom@18.0.11)(@types/react@18.0.33)(react-dom@18.2.0)(react@18.2.0)
