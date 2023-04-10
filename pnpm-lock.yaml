@@ -53,16 +53,6 @@ packages:
       '@jridgewell/trace-mapping': 0.3.18
     dev: false
 
-  /@astrojs/cloudflare@6.2.2(astro@2.2.1):
-    resolution: {integrity: sha512-Z/twtIM68TwazHGLax05WcADsR6oDVFiq21TMTfEsWOmhoVzTTPwxiU8kw8gukGrwug8JwLiiAeK7qFDZNmFcw==}
-    peerDependencies:
-      astro: ^2.1.4
-    dependencies:
-      astro: 2.2.1
-      esbuild: 0.17.15
-      tiny-glob: 0.2.9
-    dev: false
-
   /@astrojs/compiler@0.31.4:
     resolution: {integrity: sha512-6bBFeDTtPOn4jZaiD3p0f05MEGQL9pw2Zbfj546oFETNmjJFWO3nzHz6/m+P53calknCvyVzZ5YhoBLIvzn5iw==}
     dev: false

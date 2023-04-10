@@ -17,7 +17,7 @@ import { Icon } from 'astro-icon'
 	const temp = data.main.temp;
 	const weather_element = document.getElementById(`weather`);
 	if (weather_element) {
-		weather_element.innerHTML = weather_element.innerHTML.replace('Loading weather', `${Math.round(temp)}F`);
+		weather_element.innerHTML = weather_element.innerHTML.replace('Loading weather', `${Math.round(temp)}°F`);
 	}
 </script>
 
