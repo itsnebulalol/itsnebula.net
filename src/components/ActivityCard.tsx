@@ -20,7 +20,7 @@ export const ActivityCard = () => {
                     width={45}
                     alt="Song cover art"
                     placeholder="blur"
-                    className="rounded shadow"
+                    className="rounded shadow max-h-[45px]"
                     src="/img/song.webp"
                 />
             )}
@@ -29,7 +29,7 @@ export const ActivityCard = () => {
                     height={45}
                     width={45}
                     alt={lastFM.song.name}
-                    className="rounded shadow"
+                    className="rounded shadow max-h-[45px]"
                     src={lastFM.song.art}
                 />
             )}
