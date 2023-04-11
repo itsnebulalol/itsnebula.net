@@ -1,6 +1,6 @@
 import { useLanyard, Activity, LanyardData } from "react-use-lanyard";
 
-function LanyardCard() {
+function PlexCard() {
 	const { loading, status } = useLanyard({
 		userId: "574669003755356162",
 		socket: true,
@@ -13,7 +13,7 @@ function LanyardCard() {
     const getActivity = (status: LanyardData): Activity => {
         let act = {} as Activity;
         status.activities.forEach((activity: Activity) => {
-            if (activity.application_id == "782685898163617802") {
+            if (activity.application_id == "413407336082833418") {
                 act = activity;
             }
         });
@@ -21,17 +21,16 @@ function LanyardCard() {
         return act;
     }
 
-
-    const lfm = document.getElementById("lfmCard");
+    const vscode = document.getElementById("vscodeCard");
     if (loading) {
-        if (lfm) lfm.classList.remove("md:float-left");
+        if (vscode) vscode.classList.remove("md:float-left");
         return null;
     }
 
     let act: Activity = getActivity(status as LanyardData);
     try {
-        if (act.details != "Idling" || typeof act.application_id !== 'undefined' || act.application_id != null) {
-            if (lfm) lfm.classList.add("md:float-left");
+        if (typeof act.application_id !== 'undefined' && act.application_id != null && act.state != "") {
+            if (vscode) vscode.classList.add("md:float-left");
             
             return (
                 <div className="focus:outline-none transition duration-300 ease-in-out transform hover:scale-105 p-3 rounded-md border border-gray-800 dark:border-gray-400 shadow flex flex-row max-w-sm">
@@ -47,19 +46,19 @@ function LanyardCard() {
                             {act.state}
                         </div>
                         <p className="text-xxs">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="fill-current h-[1.1em] inline" viewBox="0 0 32 32"><path d="m11.72 18.685l-6.883 5.184L2 22.922L9 16L2 9.077l2.837-.947l6.883 5.184l11.433-11.3L30 4.922v22.155l-6.847 2.909ZM15.287 16l7.865 5.923V10.076Z"/></svg> Visual Studio Code
+                            <svg xmlns="http://www.w3.org/2000/svg" className="fill-current h-[1.1em] inline" viewBox="0 0 32 32"><path d="M15.527 0H6.24l10.239 16L6.24 32h9.287L25.76 16L15.527 0z"/></svg> {act.details} on Plex
                         </p>
                     </div>
                 </div>
             )
         } else {
-            if (lfm) lfm.classList.remove("md:float-left");
+            if (vscode) vscode.classList.remove("md:float-left");
             return null;
         }
     } catch (e) {
-        if (lfm) lfm.classList.remove("md:float-left");
+        if (vscode) vscode.classList.remove("md:float-left");
         return null;
     }
 }
 
-export default LanyardCard;
+export default PlexCard;

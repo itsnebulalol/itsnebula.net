@@ -3,7 +3,8 @@ import Layout from '@layouts/Default.astro';
 
 import { ActivityCard } from '@components/ActivityCard';
 import Time from '@components/Time';
-import LanyardCard from '@components/LanyardCard';
+import VSCodeCard from '@components/VSCodeCard';
+import PlexCard from '@components/PlexCard';
 import ProjectCard from '@components/ProjectCard.astro';
 import SkillCard from '@components/SkillCard.astro';
 
@@ -42,7 +43,8 @@ import { Icon } from 'astro-icon'
 	<h4 class="font-normal mb-4"><Icon name="mdi:clock" class="fill-neutral-900 dark:fill-white h-5 inline" /> <Time client:only="react" /></h4>
 	<div>
 		<ActivityCard client:only="react" />
-		<LanyardCard client:only="react" />
+		<VSCodeCard client:only="react" />
+		<PlexCard client:only="react" />
 	</div>
 
 	<!-- Projects -->
