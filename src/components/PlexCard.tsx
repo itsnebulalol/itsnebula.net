@@ -21,17 +21,30 @@ function PlexCard() {
         return act;
     }
 
-    const vscode = document.getElementById("vscodeCard");
-    if (loading) {
-        if (vscode) vscode.classList.remove("md:float-left");
-        return null;
-    }
+    const err = (
+        <div className="focus:outline-none transition duration-300 ease-in-out transform hover:scale-105 p-3 rounded-md border border-gray-800 dark:border-gray-400 shadow flex flex-row max-w-sm">
+            <img
+                height={45}
+                width={45}
+                alt="Idle"
+                className="rounded shadow max-h-[45px]"
+                src="/img/idle-plex.png"
+            />
+            <div className="my-auto ml-4">
+                <div className="font-semibold text-sm sm:text-regular">
+                    Not watching anything
+                </div>
+                <p className="text-xxs">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="fill-current h-[1.1em] inline" viewBox="0 0 32 32"><path d="M15.527 0H6.24l10.239 16L6.24 32h9.287L25.76 16L15.527 0z"/></svg> Plex
+                </p>
+            </div>
+        </div>
+    );
+    if (loading) return err;
 
     let act: Activity = getActivity(status as LanyardData);
     try {
         if (typeof act.application_id !== 'undefined' && act.application_id != null && act.state != "") {
-            if (vscode) vscode.classList.add("md:float-left");
-            
             return (
                 <div className="focus:outline-none transition duration-300 ease-in-out transform hover:scale-105 p-3 rounded-md border border-gray-800 dark:border-gray-400 shadow flex flex-row max-w-sm">
                     <img
@@ -52,12 +65,10 @@ function PlexCard() {
                 </div>
             )
         } else {
-            if (vscode) vscode.classList.remove("md:float-left");
-            return null;
+            return err;
         }
     } catch (e) {
-        if (vscode) vscode.classList.remove("md:float-left");
-        return null;
+        return err;
     }
 }
 

@@ -9,11 +9,10 @@ export const ActivityCard = () => {
 
     return (
         <a
-            id="lfmCard"
             href={lastFM.status === 'playing' ? lastFM.song.url : 'https://last.fm/itsnebulalol'}
             rel="noopener noreferrer"
             target="_blank"
-            className="focus:outline-none transition duration-300 ease-in-out transform hover:scale-105 p-3 rounded-md border border-gray-800 dark:border-gray-400 shadow flex flex-row max-w-sm mb-6 md:mb-0 md:mr-6"
+            className="focus:outline-none transition duration-300 ease-in-out transform hover:scale-105 p-3 rounded-md border border-gray-800 dark:border-gray-400 shadow flex flex-row max-w-sm"
         >
             {lastFM.status === 'idle' && (
                 <img
@@ -22,7 +21,7 @@ export const ActivityCard = () => {
                     alt="Song cover art"
                     placeholder="blur"
                     className="rounded shadow max-h-[45px]"
-                    src="/img/song.webp"
+                    src="/img/idle-music.png"
                 />
             )}
             {lastFM.status === 'playing' && (
