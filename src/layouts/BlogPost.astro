@@ -1,0 +1,42 @@
+---
+const { frontmatter } = Astro.props;
+
+import '@styles/global.css';
+
+import Meta from '@components/Meta.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <Meta title={`${frontmatter.title} | Nebula's Blog`} description={frontmatter.description} />
+    </head>
+
+    <body class="bg-gradient-to-b from-gray-100 to-[#ffacb4] dark:from-gray-900 dark:to-[#4e272b] animate-[gradient_3s_ease-in-out_infinite] text-black dark:text-white p-[50px]">
+        <Header />
+        
+        <main>
+            <h1 class="text-5xl font-bold">{frontmatter.title}</h1>
+            <div class="mt-5 flex flex-row items-center">
+                <p>
+                    Written by
+                    <a
+                        class="focus:outline-none transition duration-300 ease-in-out hover:text-indigo-900 dark:hover:text-indigo-200"
+                        href={`https://twitter.com/${frontmatter.twitter}`}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                    >
+                        {frontmatter.author}
+                    </a>
+                    • published on {frontmatter.pubDate.slice(0, 10)}
+                </p>
+            </div>
+
+            <article class="max-w-none w-full mt-8 prose prose-lg dark:prose-dark" id="postContent"><slot /></article>
+        </main>
+
+        <Footer />
+    </body>
+</html>

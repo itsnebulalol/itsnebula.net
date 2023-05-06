@@ -44,7 +44,7 @@ function PlexCard() {
 
     let act: Activity = getActivity(status as LanyardData);
     try {
-        if (typeof act.application_id !== 'undefined' && act.application_id != null && act.state != "") {
+        if (typeof act.application_id !== 'undefined' && act.application_id != null && act.state != "" && typeof act.assets !== 'undefined') {
             return (
                 <div className="focus:outline-none transition duration-300 ease-in-out transform hover:scale-105 p-3 rounded-md border border-gray-800 dark:border-gray-400 shadow flex flex-row max-w-sm">
                     <img

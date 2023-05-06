@@ -1,6 +1,6 @@
 import { useLastFM } from 'use-last-fm'
 
-export const ActivityCard = () => {
+export const MusicCard = () => {
     const truncate = (str: string, n: number) => str.length > n ? str.substr(0, n - 1) + '...' : str;
     // The last.fm api keys aren't even private :skull:
     const lastFM = useLastFM('itsnebulalol', "df402328b78cd306c726ac744981e67a", 5000, 'large');

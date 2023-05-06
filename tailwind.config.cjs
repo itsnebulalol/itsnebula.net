@@ -8,11 +8,11 @@ module.exports = {
             keyframes: {
                 gradient: {
                     "0%, 100%": {
-                        "background-size": "400% 400%",
+                        "background-size": "800% 800%",
                         "background-position": "center top",
                     },
                     "50%": {
-                        "background-size": "200% 200%",
+                        "background-size": "400% 400%",
                         "background-position": "center center",
                     },
                 },
@@ -26,7 +26,71 @@ module.exports = {
             fontSize: {
                 xxs: '0.7rem',
             },
+            typography: (theme) => ({
+                DEFAULT: {
+                    css: {
+                        color: theme('colors.gray.900'),
+                        a: {
+                            color: theme('colors.blue.700'),
+                            '&:hover': {
+                                color: theme('colors.blue.500'),
+                            },
+                        },
+            
+                        'code::before': {
+                            content: '""',
+                        },
+                        'code::after': {
+                            content: '""',
+                        },
+                    },
+                },
+                dark: {
+                    css: {
+                        color: theme('colors.gray.300'),
+                        a: {
+                            color: theme('colors.purple.500'),
+                            '&:hover': {
+                                color: theme('colors.purple.400'),
+                            },
+                        },
+
+                        h1: {
+                            color: theme('colors.gray.100'),
+                        },
+                        h2: {
+                            color: theme('colors.gray.100'),
+                        },
+                        h3: {
+                            color: theme('colors.gray.100'),
+                        },
+                        h4: {
+                            color: theme('colors.gray.100'),
+                        },
+                        h5: {
+                            color: theme('colors.gray.100'),
+                        },
+                        h6: {
+                            color: theme('colors.gray.100'),
+                        },
+            
+                        strong: {
+                            color: theme('colors.gray.100'),
+                        },
+            
+                        code: {
+                            color: theme('colors.gray.300'),
+                        },
+            
+                        figcaption: {
+                            color: theme('colors.gray.500'),
+                        },
+                    },
+                },
+            }),
         },
     },
-    plugins: [],
+    plugins: [
+        require('@tailwindcss/typography'),
+    ],
 };

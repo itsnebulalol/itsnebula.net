@@ -1,7 +1,7 @@
 ---
 import Layout from '@layouts/Default.astro';
 
-import { ActivityCard } from '@components/ActivityCard';
+import { MusicCard } from '@components/MusicCard';
 import Time from '@components/Time';
 import VSCodeCard from '@components/VSCodeCard';
 import PlexCard from '@components/PlexCard';
@@ -38,7 +38,6 @@ import { Icon } from 'astro-icon'
 
 <Layout>
 	<!-- Hero -->
-	<div class="h-8"></div>
 	<h1 class="mb-1">I'm <span class="bg-gradient-to-r from-blue-600 to-[#ff6c7b] dark:from-blue-300 dark:to-[#ffacb4] animate-[gradient_3s_ease-in-out_infinite] clip">Nebula</span>, a developer from the US.</h1>
 	<h3 class="font-normal mb-2"><span id="weather" class="font-medium">Loading weather</span> in New York</h3>
 	<h4 class="font-normal mb-4"><Icon name="mdi:clock" class="fill-neutral-900 dark:fill-white h-5 inline" /> <Time client:only="react" /></h4>
@@ -49,7 +48,7 @@ import { Icon } from 'astro-icon'
 		<SocialIcon name="Email" href="mailto:me@itsnebula.net" icon="mdi:email" />
 	</div>
 	<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-		<ActivityCard client:only="react" />
+		<MusicCard client:only="react" />
 		<VSCodeCard client:only="react" />
 		<PlexCard client:only="react" />
 	</div>

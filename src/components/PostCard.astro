@@ -1,0 +1,26 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    url: string;
+    date: string;
+    content: string;
+}
+const { title, description, url, date, content } = Astro.props;
+
+import { getReadingTime } from '@utils/readingTime';
+---
+
+<a
+    href={url}
+    rel="noopener noreferrer"
+    class="flex-grow h-24 focus:outline-none transition duration-300 ease-in-out transform hover:scale-[1.02] p-3 rounded-md border border-gray-800 dark:border-gray-400 shadow flex mb-4"
+>
+    <div class="my-auto">
+        <div class="font-semibold text-lg">{title}</div>
+        <p class="text-xs">{description}</p>
+        <p class="text-xs">
+            Published on {date.slice(0, 10)} | {getReadingTime(content)} minute read
+        </p>
+    </div>
+</a>

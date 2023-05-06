@@ -33,3 +33,15 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.prose pre {
+    @apply bg-gray-50 border border-gray-200 dark:border-gray-700 dark:bg-gray-900;
+}
+  
+.prose code {
+    @apply text-gray-800 dark:text-gray-200 px-1 py-0.5 border border-gray-100 dark:border-gray-800 rounded-md bg-gray-100 dark:bg-gray-900;
+}
+  
+.prose img {
+    @apply m-0;
+}

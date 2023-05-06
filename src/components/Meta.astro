@@ -1,10 +1,16 @@
 ---
+interface Props {
+    title?: string;
+    description?: string;
+}
+const { title, description } = Astro.props;
+
 import { SEO } from "astro-seo";
 ---
 
 <SEO
-    title="Nebula"
-    description="Nebula is a developer from the US."
+    title={title || "Nebula"}
+    description={description || "Nebula is a developer from the US."}
     twitter={{
         creator: "@itsnebulalol"
     }}
@@ -14,8 +20,8 @@ import { SEO } from "astro-seo";
             { rel: "icon", href: "/favicon.png" }
         ],
         meta: [
-            { name: "twitter:title", content: "Nebula" },
-            { name: "twitter:description", content: "Nebula is a developer from the US." },
+            { name: "twitter:title", content: title || "Nebula" },
+            { name: "twitter:description", content: description || "Nebula is a developer from the US." },
             { name: "viewport", content: "width=device-width, initial-scale=1"}
         ],
     }}
