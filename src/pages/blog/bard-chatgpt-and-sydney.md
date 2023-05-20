@@ -1,9 +1,9 @@
 ---
 layout: ../../layouts/BlogPost.astro
-title: Bard vs ChatGPT vs and Sydney (Bing AI)
+title: Bard vs ChatGPT vs Sydney (Bing AI)
 author: Nebula
 twitter: itsnebulalol
-description: A conparison bete
+description: A comparison between 3 AI chatbots.
 pubDate: 2023-05-19
 ---
 
