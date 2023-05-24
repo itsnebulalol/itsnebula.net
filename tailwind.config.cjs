@@ -5,18 +5,6 @@ module.exports = {
     content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
     theme: {
         extend: {
-            keyframes: {
-                gradient: {
-                    "0%, 100%": {
-                        "background-size": "800% 800%",
-                        "background-position": "center top",
-                    },
-                    "50%": {
-                        "background-size": "400% 400%",
-                        "background-position": "center center",
-                    },
-                },
-            },
             fontFamily: {
                 sans: ["InterVariable", "Inter", ...defaultTheme.fontFamily.sans],
             },
