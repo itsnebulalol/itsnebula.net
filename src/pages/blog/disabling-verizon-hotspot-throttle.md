@@ -35,8 +35,8 @@ To mitigate issues where sometimes your hotspot won't show up on other devices u
    - `resetprop` is much safer than editing the `build.prop` manually, since it's much more difficult to accidentally make mistakes.
 4. Enjoy your hotspot!
 
-# Final thoughts
+## Final thoughts
 
 When you want to turn off your hotspot, you can turn it off as usual. You can also disable the VPN after. When you want to enable your hotspot again, repeat the Setting up VPN Hotspot section. You do not have to set the custom prop again, as far as I know. Make sure to check if the prop stayed after a system update.
 
-After doing this, Verizon thinks the data usage is coming from your phone, instead of from another device. Make sure to check out [my post where I enabled N77 on my OnePlus 9 Pro](/blog/verizon-n77) :\).
+After doing this, Verizon thinks the data usage is coming from your phone, instead of from another device. Make sure to check out [my post where I enabled N77 on my OnePlus 9 Pro](/blog/verizon-n77) :\)
