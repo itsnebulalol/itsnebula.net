@@ -16,7 +16,7 @@
     "@astrojs/tailwind": "^5.0.0",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "astro": "^3.0.5",
+    "astro": "^3.0.8",
     "astro-icon": "^0.8.1",
     "astro-seo": "^0.8.0",
     "dayjs": "^1.11.9",
@@ -27,6 +27,6 @@
     "use-last-fm": "^0.6.1"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.9"
+    "@tailwindcss/typography": "^0.5.10"
   }
 }
