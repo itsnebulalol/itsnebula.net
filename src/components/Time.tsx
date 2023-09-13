@@ -23,7 +23,7 @@ const Time = () => {
   }, [])
 
   return (
-    <p className="inline">
+    <p>
       {date.format('MMMM Do, YYYY • hh:mm:ss A')}{' '}
       {currentEvent && (
         <span className="font-bold">
