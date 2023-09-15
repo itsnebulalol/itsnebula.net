@@ -4,14 +4,13 @@
   "version": "1.0.0",
   "repository": "https://github.com/itsnebulalol/itsnebula.net",
   "scripts": {
-    "dev": "bun --bun astro dev",
-    "start": "bun --bun astro dev",
-    "build": "bun --bun astro build",
-    "preview": "bun --bun astro preview",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/node": "^6.0.0",
     "@astrojs/react": "^3.0.0",
     "@astrojs/rss": "^3.0.0",
     "@astrojs/tailwind": "^5.0.0",
@@ -20,7 +19,6 @@
     "astro": "^3.0.8",
     "astro-icon": "^0.8.1",
     "astro-seo": "^0.8.0",
-    "bun-types": "^1.0.1",
     "dayjs": "^1.11.9",
     "million": "latest",
     "react": "^18.2.0",

@@ -9,7 +9,6 @@
       "@layouts/*": ["src/layouts/*"],
       "@styles/*": ["src/styles/*"],
       "@utils/*": ["src/utils/*"]
-    },
-    "types": ["bun-types"]
+    }
   }
 }
