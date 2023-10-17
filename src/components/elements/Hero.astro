@@ -30,8 +30,8 @@ import { Icon } from 'astro-icon'
 </script>
 
 <h1 class="mb-1">I'm <span class="bg-gradient-to-r from-blue-600 to-[#ff6c7b] dark:from-blue-300 dark:to-[#ffacb4] animate-[gradient_3s_ease-in-out_infinite] clip">Nebula</span>, a developer from the US.</h1>
-<h3 class="font-normal mb-2"><span id="weather" class="font-medium">Loading weather</span> in New York</h3>
-<h4 class="font-normal mb-4 flex gap-1 fill-gray-800 dark:fill-white"><Icon name="mdi:clock" class="h-6 w-6" /> <Time client:only="react" /></h4>
+<span class="font-normal mb-2 text-2xl block"><span id="weather" class="font-medium">Loading weather</span> in New York</span>
+<span class="font-normal mb-4 text-xl flex gap-1 fill-gray-800 dark:fill-white"><Icon name="mdi:clock" class="h-6 w-6" /> <Time client:only="react" /></span>
 <div class="grid grid-flow-col w-48 mt-3 text-lg mb-5">
     <SocialIcon name="Twitter" href="https://twitter.com/itsnebulalol" icon="mdi:twitter" />
     <SocialIcon name="Mastodon" href="https://procursus.social/@nebula" icon="mdi:mastodon" />
