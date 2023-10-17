@@ -4,7 +4,7 @@ title: iMessage on Android
 author: Nebula
 twitter: itsnebulalol
 description: Using iMessage with my phone number on Android.
-date: 2023-09-26
+pubDate: 2023-09-26
 ---
 
 If you've ever switched from an iPhone to an Android phone, you may have noticed that you're missing a key feature that most Americans use, iMessage. iMessage is great, because most Americans have an iDevice, and already have iMessage enabled. On an iDevice, you just put in the person's number, and there you go, blue bubbles. I'm not necessarily talking about people being bullied for not having an iPhone, as that is a seperate issue, but here I'm talking about iMessage just being good. You get that whole Apple "it just works" feeling.

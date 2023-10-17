@@ -4,7 +4,7 @@ title: Verizon N77
 author: Nebula
 twitter: itsnebulalol
 description: Getting 5G N77 enabled on the OnePlus 9 Pro.
-date: 2023-05-02
+pubDate: 2023-05-02
 ---
 
 N77 is a cell band Verizon uses for C-band (mid band) 5G. For whatever reason, OnePlus has this band disabled on the 9 Pro, which makes it not possible to connect to it.

@@ -1,8 +1,8 @@
 import rss, { pagesGlobToRssItems } from '@astrojs/rss';
 
-export async function get(context: any) {
+export async function GET(context: any) {
     return rss({
-        title: 'Blog | Nebula',
+        title: 'Nebula\'s Blog',
         description: 'Nebula is a developer from the US.',
         site: "https://itsnebula.net",
         items: await pagesGlobToRssItems(import.meta.glob('./blog/*.md')),

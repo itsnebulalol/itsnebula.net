@@ -4,7 +4,7 @@ title: PowerEdge 2900 Adventures
 author: Nebula
 twitter: itsnebulalol
 description: 2004 hardware is painful to work with in 2023.
-date: 2023-05-01
+pubDate: 2023-05-01
 --- 
 
 The Dell PowerEdge 2900 is a Dell server from 2006. I was able to get my hands on one for free. The motherboard PCIE was broken, so I had to spend $20 (+ $20 shipping/tax) on a new motherboard from eBay, but it was worth it since it came with 2 CPUs and 16 GB of RAM.

@@ -4,7 +4,7 @@ title: Bard vs ChatGPT vs Sydney (Bing AI)
 author: Nebula
 twitter: itsnebulalol
 description: A comparison between 3 AI chatbots.
-date: 2023-05-19
+pubDate: 2023-05-19
 ---
 
 In recent years, there has been a growing interest in artificial intelligence (AI) chatbots. These chatbots are powered by large language models (LLMs), which are trained on massive datasets of text and code. This allows them to generate text, translate languages, write different kinds of creative content, and answer your questions in an informative way.
