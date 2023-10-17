@@ -1,86 +1,15 @@
 ---
 import Layout from '@layouts/Default.astro';
 
-import { MusicCard } from '@components/MusicCard';
-import Time from '@components/Time';
-import VSCodeCard from '@components/VSCodeCard';
-import PlexCard from '@components/PlexCard';
-import ProjectCard from '@components/ProjectCard.astro';
-import SkillCard from '@components/SkillCard.astro';
-import SocialIcon from '@components/SocialIcon.astro';
-
-import { Icon } from 'astro-icon'
+import Hero from '@components/elements/Hero.astro';
+import Projects from '@components/elements/Projects.astro';
+import Skills from '@components/elements/Skills.astro';
 ---
 
-<script>
-	// Weather
-	const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=New%20York&units=imperial&appid=eecd2e62383a31c75535e0c23d2eb967&lang=en`);
-	const data = await res.json();
-	const temp_f = data.main.temp;
-
-	const res2 = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=New%20York&units=metric&appid=eecd2e62383a31c75535e0c23d2eb967&lang=en`);
-	const data2 = await res2.json();
-	const temp_c = data2.main.temp;
-
-	const weather_element = document.getElementById(`weather`);
-	if (weather_element) {
-		weather_element.innerHTML = weather_element.innerHTML = `${Math.round(temp_f)}°F`;
-
-		weather_element.addEventListener('mouseover', () => {
-			weather_element.innerHTML = `${Math.round(temp_c)}°C`;
-		});
-
-		weather_element.addEventListener('mouseout', () => {
-			weather_element.innerHTML = `${Math.round(temp_f)}°F`;
-		});
-	}
-</script>
-
 <Layout>
-	<!-- Hero -->
-	<h1 class="mb-1">I'm <span class="bg-gradient-to-r from-blue-600 to-[#ff6c7b] dark:from-blue-300 dark:to-[#ffacb4] animate-[gradient_3s_ease-in-out_infinite] clip">Nebula</span>, a developer from the US.</h1>
-	<h3 class="font-normal mb-2"><span id="weather" class="font-medium">Loading weather</span> in New York</h3>
-	<h4 class="font-normal mb-4 flex gap-1 fill-gray-800 dark:fill-white"><Icon name="mdi:clock" class="h-6 w-6" /> <Time client:only="react" /></h4>
-	<div class="grid grid-flow-col w-48 mt-3 text-lg mb-5">
-		<SocialIcon name="Twitter" href="https://twitter.com/itsnebulalol" icon="mdi:twitter" />
-		<SocialIcon name="Mastodon" href="https://procursus.social/@nebula" icon="mdi:mastodon" />
-		<SocialIcon name="Discord" href="https://discord.gg/palera1n" icon="ic:baseline-discord" />
-		<SocialIcon name="Email" href="mailto:me@itsnebula.net" icon="mdi:email" />
-	</div>
+	<Hero />
+
+	<Projects />
 	
-	<!--
-	<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-		<MusicCard client:only="react" />
-		<VSCodeCard client:only="react" />
-		<PlexCard client:only="react" />
-	</div>
-	-->
-
-	<!-- Projects -->
-	<h3 class="font-medium mt-12">Projects</h3>
-	<p class="mb-4">These are projects that I have either created, or contributed in. I only feature my projects that I like here.</p>
-	<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-		<ProjectCard repo="palera1n/palera1n" id="fEM2hz" />
-		<ProjectCard repo="permasigner/permasigner" id="8JjeWC" />
-		<ProjectCard repo="itsnebulalol/itsnebula.net" id="GM98xT" />
-		<ProjectCard repo="itsnebulalol/modempatcher" id="JD783n" />
-	</div>
-
-	<!-- Skills -->
-	<h3 class="font-medium mt-12">Skills</h3>
-	<p class="mb-4">These are tools or languages that I'm either fluent in, or have a decent amount of experience with.</p>
-	<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-		<SkillCard name="VS Code" icon="vscode-icons:file-type-vscode2" />
-		<SkillCard name="Figma" icon="logos:figma" />
-		<SkillCard name="Javascript" icon="logos:javascript" />
-		<SkillCard name="Typescript" icon="logos:typescript-icon" />
-		<SkillCard name="Python" icon="logos:python" />
-		<SkillCard name="Swift" icon="logos:swift" />
-		<SkillCard name="HTML" icon="logos:html-5" />
-		<SkillCard name="Tailwind" icon="logos:tailwindcss-icon" />
-		<SkillCard name="Fastify" icon="simple-icons:fastify" />
-		<SkillCard name="Svelte" icon="logos:svelte-icon" />
-		<SkillCard name="Docker" icon="logos:docker-icon" />
-		<SkillCard name="Astro" icon="vscode-icons:file-type-astro" />
-	</div>
+	<Skills />
 </Layout>

@@ -1,0 +1,40 @@
+---
+import Time from '@components/misc/Time';
+import SocialIcon from '@components/icons/SocialIcon.astro';
+
+import { Icon } from 'astro-icon'
+---
+
+<script>
+	// Weather
+	const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=New%20York&units=imperial&appid=eecd2e62383a31c75535e0c23d2eb967&lang=en`);
+	const data = await res.json();
+	const temp_f = data.main.temp;
+
+	const res2 = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=New%20York&units=metric&appid=eecd2e62383a31c75535e0c23d2eb967&lang=en`);
+	const data2 = await res2.json();
+	const temp_c = data2.main.temp;
+
+	const weather_element = document.getElementById(`weather`);
+	if (weather_element) {
+		weather_element.innerHTML = weather_element.innerHTML = `${Math.round(temp_f)}°F`;
+
+		weather_element.addEventListener('mouseover', () => {
+			weather_element.innerHTML = `${Math.round(temp_c)}°C`;
+		});
+
+		weather_element.addEventListener('mouseout', () => {
+			weather_element.innerHTML = `${Math.round(temp_f)}°F`;
+		});
+	}
+</script>
+
+<h1 class="mb-1">I'm <span class="bg-gradient-to-r from-blue-600 to-[#ff6c7b] dark:from-blue-300 dark:to-[#ffacb4] animate-[gradient_3s_ease-in-out_infinite] clip">Nebula</span>, a developer from the US.</h1>
+<h3 class="font-normal mb-2"><span id="weather" class="font-medium">Loading weather</span> in New York</h3>
+<h4 class="font-normal mb-4 flex gap-1 fill-gray-800 dark:fill-white"><Icon name="mdi:clock" class="h-6 w-6" /> <Time client:only="react" /></h4>
+<div class="grid grid-flow-col w-48 mt-3 text-lg mb-5">
+    <SocialIcon name="Twitter" href="https://twitter.com/itsnebulalol" icon="mdi:twitter" />
+    <SocialIcon name="Mastodon" href="https://procursus.social/@nebula" icon="mdi:mastodon" />
+    <SocialIcon name="Discord" href="https://discord.gg/palera1n" icon="ic:baseline-discord" />
+    <SocialIcon name="Email" href="mailto:me@itsnebula.net" icon="mdi:email" />
+</div>

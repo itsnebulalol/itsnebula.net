@@ -3,13 +3,13 @@ const { frontmatter } = Astro.props;
 
 import '@styles/global.css';
 
-import Meta from '@components/Meta.astro';
-import Header from '@components/Header.astro';
-import Footer from '@components/Footer.astro';
+import Meta from '@components/misc/Meta.astro';
+import Header from '@components/elements/Header.astro';
+import Footer from '@components/elements/Footer.astro';
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="bg-gray-200 dark:bg-gray-900 text-black dark:text-white">
+<html lang="en" class="bg-gray-200 dark:bg-gray-950 text-black dark:text-white scrollbar scrollbar-thumb-gray-400 dark:scrollbar-thumb-gray-900">
     <head>
         <Meta title={`${frontmatter.title} | Nebula's Blog`} description={frontmatter.description} />
     </head>
@@ -30,7 +30,7 @@ import Footer from '@components/Footer.astro';
                     >
                         {frontmatter.author}
                     </a>
-                    • published on {frontmatter.pubDate.slice(0, 10)}
+                    • published on {frontmatter.date.slice(0, 10)}
                 </p>
             </div>
 

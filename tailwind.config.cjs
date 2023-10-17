@@ -36,7 +36,7 @@ module.exports = {
                                 color: theme('colors.blue.500'),
                             },
                         },
-            
+
                         'code::before': {
                             content: '""',
                         },
@@ -73,15 +73,15 @@ module.exports = {
                         h6: {
                             color: theme('colors.gray.100'),
                         },
-            
+
                         strong: {
                             color: theme('colors.gray.100'),
                         },
-            
+
                         code: {
                             color: theme('colors.gray.300'),
                         },
-            
+
                         figcaption: {
                             color: theme('colors.gray.500'),
                         },
@@ -92,5 +92,6 @@ module.exports = {
     },
     plugins: [
         require('@tailwindcss/typography'),
+        require('tailwind-scrollbar'),
     ],
 };

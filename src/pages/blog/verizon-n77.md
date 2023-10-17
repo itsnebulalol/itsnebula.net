@@ -4,7 +4,7 @@ title: Verizon N77
 author: Nebula
 twitter: itsnebulalol
 description: Getting 5G N77 enabled on the OnePlus 9 Pro.
-pubDate: 2023-05-02
+date: 2023-05-02
 ---
 
 N77 is a cell band Verizon uses for C-band (mid band) 5G. For whatever reason, OnePlus has this band disabled on the 9 Pro, which makes it not possible to connect to it.
@@ -35,4 +35,6 @@ I flashed Lineage, and the patched modem to both slots on my phone, booted it, a
 
 I wrote a quick Python script to automate this process on a dumped `modem.img`. [Here](https://github.com/itsnebulalol/modempatcher) it is if you'd like to do this yourself. I even added an (untested) Android 11/12 mode.
 
-It's unfortunate that the C-band towers near me aren't great. The max I've gotten was 350 mbps download. I'll update this if I ever get higher speeds.
+It's unfortunate that the C-band towers near me aren't great. The max I've gotten so far is 350 mbps download.
+
+**9/26 Update:** C-band towers in my area have gotten much better, and they average around 300-600 mbps, which is amazing compared to LTE. Since I originally wrote this, I've switched to the Evolution X ROM, where QPST works natively in my experience, and I recommend it for other OnePlus 9 Pro users, since other ROMs on this device don't work as well. This whole N77 solution isn't perfect and it would be amazing if OnePlus enabled it in stock, but whatever. I can't wait for Verizon 5G SA to roll out, the toggle appeared on the iPhone 14 and above in the latest Verizon carrier bundle version, which makes it seem that SA ic coming soon.

@@ -4,7 +4,7 @@ title: Disabling the Verizon Hotspot Throttle
 author: Nebula
 twitter: itsnebulalol
 description: Messing with Verizon, once again.
-pubDate: 2023-05-26
+date: 2023-05-26
 ---
 
 If you're a heavy hotspot user and tend to use more than your hotspot data limit, you're just like me. I use my hotspot for almost 4 hours daily. That much hotspot use will easily surpass 25 GB in less than a month. Keep in mind that while this will make data not count towards your hotspot limit, it will count towards your normal data limit (which is 50 GB on the Do More plan).
