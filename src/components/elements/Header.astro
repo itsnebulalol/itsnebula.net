@@ -2,8 +2,10 @@
 import { Image } from 'astro:assets';
 ---
 
-<header class="flex items-center justify-between">
+<header class="flex items-center justify-between mb-8">
     <a href="/"><Image width="64" height="64" src="/favicon.png" alt="Icon"></a>
-	<a class="text-lg text-blue-600 dark:text-blue-300 transition duration-300 ease-in-out transform hover:text-blue-700 dark:hover:text-blue-400" href="/blog" rel="noopener noreferrer">Blog</a>
+    <div class="justify-end">
+        <a class="text-lg text-blue-600 dark:text-blue-300 transition duration-300 ease-in-out transform hover:text-blue-700 dark:hover:text-blue-400 mr-4" href="/donate" rel="noopener noreferrer">Donate</a>
+	    <a class="text-lg text-blue-600 dark:text-blue-300 transition duration-300 ease-in-out transform hover:text-blue-700 dark:hover:text-blue-400" href="/blog" rel="noopener noreferrer">Blog</a>
+    </div>
 </header>
-<div class="h-8"></div>

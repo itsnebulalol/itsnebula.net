@@ -2,8 +2,8 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import million from 'million/compiler';
-
 import sitemap from "@astrojs/sitemap";
+import icon from "astro-icon";
 
 export default defineConfig({
   site: 'https://itsnebula.net',
@@ -11,7 +11,7 @@ export default defineConfig({
     config: {
       applyBaseStyles: false
     }
-  }), react(), sitemap()],
+  }), react(), sitemap(), icon()],
   vite: {
     plugins: [million.vite({
       mode: 'react',

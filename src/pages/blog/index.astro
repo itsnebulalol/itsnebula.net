@@ -7,7 +7,7 @@ const posts = await Astro.glob('./*.md').then(items => items.filter((post) => !p
 posts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate));
 ---
 
-<Layout title="Blog | Nebula">
+<Layout title="Blog | Nebula" description="My random blog posts.">
     <h1 class="text-5xl font-bold mb-6">Blog</h1>
     {posts.map(post => {if (post.url) return <PostCard title={post.frontmatter.title} description={post.frontmatter.description} url={post.url} date={post.frontmatter.pubDate} content={post.rawContent.toString()} />})}
 </Layout>

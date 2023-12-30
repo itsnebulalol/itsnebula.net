@@ -1,0 +1,24 @@
+---
+interface Props {
+    code?: boolean;
+    text?: string;
+}
+const { code, text } = Astro.props;
+
+import { Icon } from 'astro-icon/components';
+---
+
+<code
+    class={`text-sm sm:text-base inline-flex text-left items-center space-x-4 bg-gray-800 text-white rounded-lg p-1 ${code ? "pl-6" : "pl-3"}`}>
+    <span class="flex gap-4">
+        {code ? (
+            <span class="shrink-0 text-gray-500">$</span>
+        ) : ""}
+
+        <span class="flex-1">
+            {text}
+        </span>
+    </span>
+
+    <Icon name="mdi:content-copy" class="shrink-0 h-5 w-5 transition text-gray-500 hover:text-white cursor-pointer" onclick={`navigator.clipboard.writeText("${text}")`} />
+</code>

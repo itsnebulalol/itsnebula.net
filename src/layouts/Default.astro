@@ -1,8 +1,9 @@
 ---
 interface Props {
     title?: string;
+    description?: string;
 }
-const { title } = Astro.props;
+const { title, description } = Astro.props;
         
 import '@styles/global.css';
 
@@ -14,11 +15,11 @@ import Footer from '@components/elements/Footer.astro';
 <!DOCTYPE html>
 <html lang="en" class="bg-gray-200 dark:bg-gray-950 text-black dark:text-white scrollbar scrollbar-thumb-gray-400 dark:scrollbar-thumb-gray-900">
     <head>
-        <Meta title={title || "Nebula"} />
+        <Meta title={title || "Nebula"} description={description || "Nebula is a developer from the US."} />
     </head>
 
     <body class="p-[50px]">
-        <a rel="me" href="https://procursus.social/@nebula" style={{"display": "none"}}></a>
+        <a rel="me" href="https://procursus.social/@nebula" class="hidden"></a>
         
         <Header />
         
