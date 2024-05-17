@@ -11,25 +11,26 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^3.0.9",
-    "@astrojs/rss": "^4.0.1",
-    "@astrojs/sitemap": "^3.0.4",
+    "@astrojs/react": "^3.3.4",
+    "@astrojs/rss": "^4.0.6",
+    "@astrojs/sitemap": "^3.1.4",
     "@astrojs/tailwind": "^5.1.0",
     "@iconify-json/logos": "^1.1.42",
-    "@iconify-json/mdi": "^1.1.63",
-    "@types/react": "^18.2.46",
-    "@types/react-dom": "^18.2.18",
-    "astro": "^4.0.8",
-    "astro-icon": "^1.0.1",
-    "astro-seo": "^0.8.0",
-    "dayjs": "^1.11.10",
-    "million": "^2.6.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tailwindcss": "^3.4.0"
+    "@iconify-json/mdi": "^1.1.66",
+    "@types/react": "^18.3.2",
+    "@types/react-dom": "^18.3.0",
+    "astro": "^4.8.6",
+    "astro-icon": "^1.1.0",
+    "astro-seo": "^0.8.3",
+    "dayjs": "^1.11.11",
+    "million": "^3.0.6",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.3",
+    "use-last-fm": "^0.6.1"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.10",
-    "tailwind-scrollbar": "^3.0.5"
+    "@tailwindcss/typography": "^0.5.13",
+    "tailwind-scrollbar": "^3.1.0"
   }
 }
