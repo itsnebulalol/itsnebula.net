@@ -1,6 +1,7 @@
 ---
 import Time from '@components/misc/Time';
 import SocialIcon from '@components/icons/SocialIcon.astro';
+import MusicCard from '@components/cards/MusicCard';
 
 import { Icon } from 'astro-icon/components';
 ---
@@ -38,3 +39,4 @@ import { Icon } from 'astro-icon/components';
     <SocialIcon name="Discord" href="https://discord.com/users/574669003755356162" icon="mdi:discord" />
     <SocialIcon name="Email" href="mailto:me@itsnebula.net" icon="mdi:email" />
 </div>
+<MusicCard client:only="react" />
