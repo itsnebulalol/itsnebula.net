@@ -8,7 +8,7 @@ export const MusicCard = () => {
 
     return (
         <a
-            href={lastFM.status === 'playing' ? lastFM.song.url : 'https://last.fm/itsnebulalol'}
+            href={lastFM.status === 'playing' ? lastFM.song.url : 'https://last.fm/user/itsnebulalol'}
             rel="noopener noreferrer"
             target="_blank"
             className="focus:outline-none transition duration-300 ease-in-out transform hover:scale-[1.025] p-3 rounded-md bg-gray-300 dark:bg-gray-800 text-black dark:text-white shadow flex flex-row max-w-sm"
